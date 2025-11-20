@@ -40,13 +40,28 @@
 const xyz =(array1, array2) => {
     const mergedArray = [...array1,  ...array2];
     const result = mergedArray.map((num) => {
-         if (num % 2 !==0 && num >5 || num <10 ) {
+         if ((num > 5 && num < 10) || num % 2 !== 0 ) {
             console.log(num, "<---this number met the condition");
             return num;
          }
     });
-    return result;
+    return result.filter((el)=>{
+        return el !== undefined;
+    });
 
 };
 
-console.log(xyz([0,1,2], [3,4,5,6,7,8,9,10,11,12,13]));
+// console.log(xyz([0,1,2], [3,4,5,6,7,8,9,10,11,12,13]));
+
+const array1 = [1,2,3];
+const array2 = [4,5,6];
+
+const multiply=(array1,array2)=>{
+const bigarray = [...array1,  ...array2];
+const result = bigarray.filter((num) => num 
+% 2 === 0).map((num) => num *2);
+return
+
+};
+
+console.log(multiply(array1, array2));
